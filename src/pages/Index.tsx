@@ -9,80 +9,80 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userApplications, setUserApplications] = useState([
-    { id: 1, title: 'Получение справки о доходах', status: 'В обработке', date: '15.09.2025' },
-    { id: 2, title: 'Регистрация ИП', status: 'Готово', date: '10.09.2025' },
+  const [userProjects, setUserProjects] = useState([
+    { id: 1, title: 'Экологическая экспертиза завода', status: 'На рассмотрении', date: '15.09.2025' },
+    { id: 2, title: 'Отчет по выбросам предприятия', status: 'Утвержден', date: '10.09.2025' },
   ]);
 
   const services = [
     {
-      title: 'Социальные выплаты',
-      description: 'Оформление пособий, льгот и социальных выплат',
-      icon: 'Users',
+      title: 'Экологическое проектирование',
+      description: 'Разработка проектов природоохранных мероприятий и экологической документации',
+      icon: 'TreePine',
       popular: true
     },
     {
-      title: 'Документы и справки',
-      description: 'Получение справок, выписок и других документов',
-      icon: 'FileText',
+      title: 'Экологическая экспертиза',
+      description: 'Государственная экологическая экспертиза проектов и документации',
+      icon: 'FileSearch',
       popular: true
     },
     {
-      title: 'Регистрация ИП',
-      description: 'Регистрация индивидуального предпринимателя',
-      icon: 'Building',
+      title: 'Экологическая отчетность',
+      description: 'Подача и проверка отчетов о воздействии на окружающую среду',
+      icon: 'BarChart3',
+      popular: true
+    },
+    {
+      title: 'Разрешения на выбросы',
+      description: 'Получение разрешений на выбросы загрязняющих веществ',
+      icon: 'Wind',
       popular: false
     },
     {
-      title: 'Налоговые услуги',
-      description: 'Подача деклараций и налоговых уведомлений',
-      icon: 'Calculator',
+      title: 'Экологический мониторинг',
+      description: 'Организация и проведение экологического мониторинга территорий',
+      icon: 'Activity',
       popular: true
     },
     {
-      title: 'Земельные вопросы',
-      description: 'Оформление земельных участков и разрешений',
-      icon: 'Map',
+      title: 'Нормирование отходов',
+      description: 'Разработка нормативов образования отходов и лимитов на их размещение',
+      icon: 'Recycle',
       popular: false
-    },
-    {
-      title: 'Медицинские услуги',
-      description: 'Запись к врачу и получение медицинских справок',
-      icon: 'Heart',
-      popular: true
     }
   ];
 
   const news = [
     {
-      title: 'Новый порядок оформления социальных выплат',
+      title: 'Новые требования к экологической отчетности с 2025 года',
       date: '20.09.2025',
-      description: 'С 1 октября вступают в силу упрощенные процедуры оформления социальных выплат.'
+      description: 'Вступили в силу обновленные требования к составлению и подаче экологических отчетов предприятий.'
     },
     {
-      title: 'График работы в праздничные дни',
+      title: 'Запуск цифровой платформы экологического мониторинга',
       date: '18.09.2025', 
-      description: 'Информируем о режиме работы государственных служб в предстоящие праздничные дни.'
+      description: 'Начала работу новая система онлайн-мониторинга состояния окружающей среды.'
     },
     {
-      title: 'Запущен новый сервис электронных справок',
+      title: 'Упрощение процедур получения экологических разрешений',
       date: '15.09.2025',
-      description: 'Теперь большинство справок можно получить в электронном виде через личный кабинет.'
+      description: 'Сокращены сроки рассмотрения заявлений на получение разрешений на выбросы и сбросы.'
     }
   ];
 
   const faq = [
     {
-      question: 'Как зарегистрироваться в личном кабинете?',
-      answer: 'Для регистрации используйте кнопку "Войти" и следуйте инструкциям. Потребуется паспорт и СНИЛС.'
+      question: 'Как подать заявку на экологическую экспертизу?',
+      answer: 'Заявку можно подать через личный кабинет, приложив необходимые документы согласно техническому заданию.'
     },
     {
-      question: 'Сколько времени занимает рассмотрение заявления?',
-      answer: 'Срок рассмотрения зависит от типа услуги. Большинство заявлений рассматривается в течение 10 рабочих дней.'
+      question: 'Какие сроки рассмотрения экологической документации?',
+      answer: 'Срок экологической экспертизы не превышает 60 дней со дня регистрации заявления с полным комплектом документов.'
     },
     {
-      question: 'Можно ли отследить статус заявления?',
-      answer: 'Да, в личном кабинете вы можете отслеживать статус всех поданных заявлений в режиме реального времени.'
+      question: 'Можно ли отслеживать статус экологической экспертизы?',
+      answer: 'Да, в личном кабинете доступна информация о текущем статусе рассмотрения всех поданных документов.'
     }
   ];
 
@@ -91,24 +91,24 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-green-50">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Icon name="Building2" size={32} className="text-primary" />
+              <Icon name="Leaf" size={32} className="text-primary" />
               <div>
-                <h1 className="text-xl font-semibold text-gray-900">Госуслуги</h1>
-                <p className="text-sm text-gray-600">Портал государственных услуг</p>
+                <h1 className="text-xl font-semibold text-gray-900">ЭкоПроект</h1>
+                <p className="text-sm text-gray-600">Министерство экологии и природных ресурсов</p>
               </div>
             </div>
             
             <nav className="hidden md:flex items-center space-x-6">
               <a href="#services" className="text-gray-700 hover:text-primary font-medium">Услуги</a>
-              <a href="#documents" className="text-gray-700 hover:text-primary font-medium">Документы</a>
+              <a href="#expertise" className="text-gray-700 hover:text-primary font-medium">Экспертиза</a>
+              <a href="#monitoring" className="text-gray-700 hover:text-primary font-medium">Мониторинг</a>
               <a href="#news" className="text-gray-700 hover:text-primary font-medium">Новости</a>
-              <a href="#faq" className="text-gray-700 hover:text-primary font-medium">Вопросы</a>
               <a href="#contacts" className="text-gray-700 hover:text-primary font-medium">Контакты</a>
             </nav>
 
@@ -123,54 +123,57 @@ const Index = () => {
                   </DialogTrigger>
                   <DialogContent className="max-w-2xl">
                     <DialogHeader>
-                      <DialogTitle>Личный кабинет</DialogTitle>
+                      <DialogTitle>Личный кабинет эколога</DialogTitle>
                       <DialogDescription>
-                        Управление заявками и персональными данными
+                        Управление экологическими проектами и отчетностью
                       </DialogDescription>
                     </DialogHeader>
-                    <Tabs defaultValue="applications" className="w-full">
+                    <Tabs defaultValue="projects" className="w-full">
                       <TabsList className="grid w-full grid-cols-2">
-                        <TabsTrigger value="applications">Мои заявки</TabsTrigger>
-                        <TabsTrigger value="profile">Профиль</TabsTrigger>
+                        <TabsTrigger value="projects">Мои проекты</TabsTrigger>
+                        <TabsTrigger value="reports">Отчетность</TabsTrigger>
                       </TabsList>
-                      <TabsContent value="applications" className="space-y-4">
-                        {userApplications.map((app) => (
-                          <Card key={app.id}>
+                      <TabsContent value="projects" className="space-y-4">
+                        {userProjects.map((project) => (
+                          <Card key={project.id}>
                             <CardHeader className="pb-3">
                               <div className="flex justify-between items-start">
-                                <CardTitle className="text-base">{app.title}</CardTitle>
-                                <Badge variant={app.status === 'Готово' ? 'default' : 'secondary'}>
-                                  {app.status}
+                                <CardTitle className="text-base">{project.title}</CardTitle>
+                                <Badge variant={project.status === 'Утвержден' ? 'default' : 'secondary'}>
+                                  {project.status}
                                 </Badge>
                               </div>
-                              <CardDescription>Подано {app.date}</CardDescription>
+                              <CardDescription>Подано {project.date}</CardDescription>
                             </CardHeader>
                           </Card>
                         ))}
                         <Button className="w-full" size="lg">
                           <Icon name="Plus" size={18} className="mr-2" />
-                          Подать новую заявку
+                          Новый проект
                         </Button>
                       </TabsContent>
-                      <TabsContent value="profile" className="space-y-4">
+                      <TabsContent value="reports" className="space-y-4">
                         <Card>
                           <CardHeader>
-                            <CardTitle>Персональные данные</CardTitle>
+                            <CardTitle>Экологическая отчетность</CardTitle>
                           </CardHeader>
                           <CardContent className="space-y-4">
                             <div>
-                              <label className="text-sm font-medium">ФИО</label>
-                              <Input defaultValue="Иванов Иван Иванович" className="mt-1" />
+                              <label className="text-sm font-medium">Организация</label>
+                              <Input defaultValue="ООО Экопром" className="mt-1" />
                             </div>
                             <div>
-                              <label className="text-sm font-medium">Email</label>
-                              <Input defaultValue="ivan@example.com" className="mt-1" />
+                              <label className="text-sm font-medium">ОКПО</label>
+                              <Input defaultValue="12345678" className="mt-1" />
                             </div>
                             <div>
-                              <label className="text-sm font-medium">Телефон</label>
-                              <Input defaultValue="+7 (999) 123-45-67" className="mt-1" />
+                              <label className="text-sm font-medium">Отчетный период</label>
+                              <Input defaultValue="2024 год" className="mt-1" />
                             </div>
-                            <Button>Сохранить изменения</Button>
+                            <Button>
+                              <Icon name="Upload" size={16} className="mr-2" />
+                              Загрузить отчет
+                            </Button>
                           </CardContent>
                         </Card>
                       </TabsContent>
@@ -192,17 +195,17 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-blue-50 py-16">
+      <section className="bg-gradient-to-br from-green-100 to-green-50 py-16">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Государственные услуги онлайн
+                Экологическое проектирование и нормирование
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Быстро, удобно и безопасно получайте государственные услуги, 
-                не выходя из дома. Подавайте заявления и отслеживайте их статус 
-                в личном кабинете.
+                Профессиональные услуги в сфере охраны окружающей среды. 
+                Экологическая экспертиза, проектирование, отчетность и мониторинг 
+                в соответствии с требованиями законодательства.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 py-6">
@@ -210,15 +213,15 @@ const Index = () => {
                   Найти услугу
                 </Button>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                  <Icon name="HelpCircle" size={20} className="mr-2" />
-                  Помощь
+                  <Icon name="FileText" size={20} className="mr-2" />
+                  Нормативы
                 </Button>
               </div>
             </div>
             <div className="lg:text-right">
               <img 
-                src="/img/9111daff-a157-4f43-b582-988b93541828.jpg" 
-                alt="Здание государственных служб"
+                src="/img/7148e574-8a61-4bc6-ba5d-8d0a957b332b.jpg" 
+                alt="Экологически чистое здание"
                 className="rounded-2xl shadow-2xl w-full max-w-lg ml-auto"
               />
             </div>
@@ -226,13 +229,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Popular Services */}
+      {/* Environmental Services */}
       <section id="services" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Популярные услуги</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Экологические услуги</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Наиболее востребованные государственные услуги, доступные в электронном виде
+              Полный спектр услуг в области охраны окружающей среды и экологического нормирования
             </p>
           </div>
           
@@ -264,13 +267,67 @@ const Index = () => {
         </div>
       </section>
 
-      {/* News Section */}
-      <section id="news" className="py-16 bg-slate-50">
+      {/* Environmental Statistics */}
+      <section className="py-16 bg-green-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Новости и объявления</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Экологические показатели</h2>
             <p className="text-lg text-gray-600">
-              Актуальная информация об изменениях в работе государственных служб
+              Ключевые достижения в области охраны окружающей среды
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-8">
+            <Card className="text-center bg-white">
+              <CardHeader>
+                <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Icon name="TreePine" size={24} className="text-primary" />
+                </div>
+                <CardTitle className="text-3xl font-bold text-primary">2,847</CardTitle>
+                <CardDescription>Экологических проектов</CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="text-center bg-white">
+              <CardHeader>
+                <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Icon name="Shield" size={24} className="text-primary" />
+                </div>
+                <CardTitle className="text-3xl font-bold text-primary">98%</CardTitle>
+                <CardDescription>Соответствие нормативам</CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="text-center bg-white">
+              <CardHeader>
+                <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Icon name="Factory" size={24} className="text-primary" />
+                </div>
+                <CardTitle className="text-3xl font-bold text-primary">1,543</CardTitle>
+                <CardDescription>Предприятий под контролем</CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="text-center bg-white">
+              <CardHeader>
+                <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Icon name="TrendingDown" size={24} className="text-primary" />
+                </div>
+                <CardTitle className="text-3xl font-bold text-primary">-23%</CardTitle>
+                <CardDescription>Снижение выбросов</CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* News Section */}
+      <section id="news" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Новости экологии</h2>
+            <p className="text-lg text-gray-600">
+              Последние изменения в экологическом законодательстве и практике
             </p>
           </div>
           
@@ -301,18 +358,18 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16 bg-white">
+      <section className="py-16 bg-green-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Часто задаваемые вопросы</h2>
             <p className="text-lg text-gray-600">
-              Ответы на популярные вопросы о получении государственных услуг
+              Ответы на популярные вопросы по экологическому проектированию и экспертизе
             </p>
           </div>
           
           <div className="max-w-3xl mx-auto space-y-4">
             {faq.map((item, index) => (
-              <Card key={index}>
+              <Card key={index} className="bg-white">
                 <CardHeader className="cursor-pointer">
                   <CardTitle className="text-lg flex items-center justify-between">
                     {item.question}
@@ -329,12 +386,12 @@ const Index = () => {
       </section>
 
       {/* Contacts Section */}
-      <section id="contacts" className="py-16 bg-slate-50">
+      <section id="contacts" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Контакты и поддержка</h2>
             <p className="text-lg text-gray-600">
-              Свяжитесь с нами для получения помощи или консультации
+              Свяжитесь с нами по вопросам экологического проектирования и экспертизы
             </p>
           </div>
           
@@ -344,25 +401,24 @@ const Index = () => {
                 <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <Icon name="Phone" size={24} className="text-primary" />
                 </div>
-                <CardTitle>Телефон поддержки</CardTitle>
+                <CardTitle>Горячая линия</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-semibold text-primary mb-2">8-800-100-70-10</p>
-                <p className="text-sm text-gray-600">Круглосуточно, бесплатно</p>
+                <p className="text-2xl font-semibold text-primary mb-2">8-800-200-30-40</p>
+                <p className="text-sm text-gray-600">Пн-Пт: 9:00 - 18:00</p>
               </CardContent>
             </Card>
 
             <Card className="text-center">
               <CardHeader>
                 <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <Icon name="Clock" size={24} className="text-primary" />
+                  <Icon name="Mail" size={24} className="text-primary" />
                 </div>
-                <CardTitle>Часы работы</CardTitle>
+                <CardTitle>Электронная почта</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-semibold mb-1">Пн-Пт: 8:00 - 20:00</p>
-                <p className="font-semibold mb-2">Сб: 9:00 - 18:00</p>
-                <p className="text-sm text-gray-600">Онлайн - круглосуточно</p>
+                <p className="font-semibold mb-1">eco@minecology.ru</p>
+                <p className="text-sm text-gray-600">Ответ в течение 24 часов</p>
               </CardContent>
             </Card>
 
@@ -371,10 +427,10 @@ const Index = () => {
                 <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <Icon name="MapPin" size={24} className="text-primary" />
                 </div>
-                <CardTitle>Офисы обслуживания</CardTitle>
+                <CardTitle>Региональные офисы</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-semibold mb-2">120+ отделений</p>
+                <p className="font-semibold mb-2">85 региональных центров</p>
                 <Button variant="outline" size="sm">
                   <Icon name="Navigation" size={16} className="mr-2" />
                   Найти ближайший
@@ -391,47 +447,47 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-6">
-                <Icon name="Building2" size={24} className="text-primary" />
-                <span className="text-xl font-semibold">Госуслуги</span>
+                <Icon name="Leaf" size={24} className="text-primary" />
+                <span className="text-xl font-semibold">ЭкоПроект</span>
               </div>
               <p className="text-gray-400 mb-4">
-                Портал государственных услуг - ваш надежный помощник в решении любых вопросов.
+                Министерство экологии и природных ресурсов - защищаем окружающую среду вместе.
               </p>
             </div>
             
             <div>
               <h4 className="font-semibold mb-4">Услуги</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Социальные выплаты</a></li>
-                <li><a href="#" className="hover:text-white">Документы</a></li>
-                <li><a href="#" className="hover:text-white">Регистрация ИП</a></li>
-                <li><a href="#" className="hover:text-white">Налоговые услуги</a></li>
+                <li><a href="#" className="hover:text-white">Экологическая экспертиза</a></li>
+                <li><a href="#" className="hover:text-white">Проектирование</a></li>
+                <li><a href="#" className="hover:text-white">Отчетность</a></li>
+                <li><a href="#" className="hover:text-white">Мониторинг</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Поддержка</h4>
+              <h4 className="font-semibold mb-4">Документы</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Помощь</a></li>
-                <li><a href="#" className="hover:text-white">Инструкции</a></li>
-                <li><a href="#" className="hover:text-white">Вопросы и ответы</a></li>
-                <li><a href="#" className="hover:text-white">Обратная связь</a></li>
+                <li><a href="#" className="hover:text-white">Нормативы</a></li>
+                <li><a href="#" className="hover:text-white">Методики</a></li>
+                <li><a href="#" className="hover:text-white">Регламенты</a></li>
+                <li><a href="#" className="hover:text-white">Формы отчетности</a></li>
               </ul>
             </div>
             
             <div>
               <h4 className="font-semibold mb-4">Контакты</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>8-800-100-70-10</li>
-                <li>support@gosuslugi.ru</li>
-                <li>Пн-Пт: 8:00 - 20:00</li>
-                <li>Сб: 9:00 - 18:00</li>
+                <li>8-800-200-30-40</li>
+                <li>eco@minecology.ru</li>
+                <li>Пн-Пт: 9:00 - 18:00</li>
+                <li>Сб: 10:00 - 16:00</li>
               </ul>
             </div>
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Портал государственных услуг. Все права защищены.</p>
+            <p>&copy; 2025 Министерство экологии и природных ресурсов. Все права защищены.</p>
           </div>
         </div>
       </footer>
